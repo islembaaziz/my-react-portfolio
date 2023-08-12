@@ -1,36 +1,27 @@
 import React from "react";
-import arrayDestruct from "../assets/portfolio/arrayDestruct.jpg";
-import installNode from "../assets/portfolio/installNode.jpg";
+import tgbt from "../assets/portfolio/tgbt.jpg";
+
 import navbar from "../assets/portfolio/navbar.jpg";
-import reactParallax from "../assets/portfolio/reactParallax.jpg";
-import reactSmooth from "../assets/portfolio/reactSmooth.jpg";
-import reactWeather from "../assets/portfolio/reactWeather.jpg";
+import portofolio from "../assets/portfolio/portofolio.jpg";
+
 
 const Portfolio = () => {
   const portfolios = [
     {
       id: 1,
-      src: arrayDestruct,
+      src: tgbt,
+      link: "http://thegreenboxtn.shop/",
     },
     {
       id: 2,
-      src: reactParallax,
+      src: portofolio,
+      link: "https://islembaaziz.netlify.app/",
+      code: "https://github.com/Luiji69/my-react-portfolio.git",
     },
     {
       id: 3,
       src: navbar,
-    },
-    {
-      id: 4,
-      src: reactSmooth,
-    },
-    {
-      id: 5,
-      src: installNode,
-    },
-    {
-      id: 6,
-      src: reactWeather,
+      link: "http://thegreenboxtn.shop/",
     },
   ];
 
@@ -48,7 +39,7 @@ const Portfolio = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-          {portfolios.map(({ id, src }) => (
+          {portfolios.map(({ id, src, link, code }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
               <img
                 src={src}
@@ -56,12 +47,29 @@ const Portfolio = () => {
                 className="rounded-md duration-200 hover:scale-105"
               />
               <div className="flex items-center justify-center">
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  Demo
-                </button>
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                  Code
-                </button>
+              <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
+                >
+                  Preview 
+                </a>
+                {code ? ( // Check if code property exists
+                  <a
+                    href={code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
+                  >
+                    Code
+                  </a>
+                ) : (
+                  // If code property is missing or falsy, make the link unclickable
+                  <span className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 cursor-not-allowed">
+                    Code
+                  </span>
+                )}
               </div>
             </div>
           ))}

@@ -12,11 +12,11 @@ const Home = () => {
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className="flex flex-col justify-center h-full">
           <h2 className="text-4xl sm:text-7xl font-bold text-white">
-            I'm a Front-End Developer
+            I'm a Full stack Developer
           </h2>
           <p className="text-gray-500 py-4 max-w-md">
           A computer enthusiast, I learned to code from an early age in various computer languages
-           and Freamworks ​​(JS, Tailwind CSS, ReactJS, AngularJS...),
+           and Freamworks ​​(JS, SASS, Tailwind CSS, ReactJS, AngularJS...),
             I master the different stages and techniques for creating a website or a web application,
              understanding the users needs.
           </p>
